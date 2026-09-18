@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html class="h-full" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -171,6 +172,16 @@
         }
       </script>
 </head>
+        <script>
+  (function() {
+    const isAuth = sessionStorage.getItem('edupro_founder_authenticated');
+    const phone = sessionStorage.getItem('edupro_founder_phone');
+    if (isAuth !== 'true' || phone !== '9166603971') {
+      alert('⚠️ अनाधिकृत प्रवेश वर्जित है! (Access Denied)');
+      window.location.replace('login.html');
+    }
+  })();
+</script>
 <body class="bg-surface text-on-surface font-body-md h-full flex overflow-hidden">
 <!-- SideNavBar (Desktop) -->
 <nav class="hidden md:flex flex-col h-full py-md px-base fixed left-0 top-0 w-[280px] bg-surface-container-low border-r border-outline-variant z-40">
